@@ -2,7 +2,7 @@
 
 import re , urllib.parse , urllib.request , http.cookiejar , base64 , binascii , rsa , time, pprint, requests,json
 from bs4 import BeautifulSoup
-from program.Conn import MongoDB
+#from program.Conn import MongoDB
 
 # -*- 以下4行代码说简单点就是让你接下来的所有get和post请求都带上已经获取的cookie，因为稍大些的网站的登陆验证全靠cookie -*-
 cj = http.cookiejar.LWPCookieJar()
@@ -13,7 +13,7 @@ urllib.request.install_opener(opener)
 
 def getData(url):
     """
-    # 封装一个用于get的函数，新浪微博这边get出来的内容编码都是-8，所以把utf-8写死在里边了，真实项目中建议根据内容实际编码来决定
+    # 封装一个用于get的函数，新浪微博这边get出来的内容编码都是utf-8，所以把utf-8写死在里边了，真实项目中建议根据内容实际编码来决定
     :param url: 输入需要访问的url地址，返回text结果
     :return:
     """
